@@ -1,5 +1,6 @@
 #include<iostream>
 using namespace std;
+#include <cmath>
 
 //TC -> 0(sqrt(n)) SC -> 0(1)
 bool isPrimeOptimize(int n){
