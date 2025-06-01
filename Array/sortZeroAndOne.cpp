@@ -34,6 +34,10 @@ void sortZeroAndOneSecond(int arr[],int size){
     }
 }
 
+void sortAndOneUsingInbuildMethod(int arr[],int size){
+    sort(arr,arr+size);
+}
+
 int main(){
     int arr[] = {0,1,0,1,1,0,1,0};
     // int arr[] = {1,0,0,0,1,0,1};
@@ -41,7 +45,8 @@ int main(){
     // int arr[] = {1, 1, 0, 0};
     int size = sizeof(arr)/sizeof(arr[1]);
     // sortZeroAndOne(arr,size);
-    sortZeroAndOneSecond(arr,size);
+    // sortZeroAndOneSecond(arr,size);
+    sortAndOneUsingInbuildMethod(arr,size);
     for(int i=0;i<size;i++){
         cout<<arr[i]<<" ";
     }
