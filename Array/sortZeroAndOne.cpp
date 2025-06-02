@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-//using two pointer techine
+//using two pointer techine TC- o(n) sc-o(1)
 void sortZeroAndOne(int arr[],int size){
     int i =0,j=size-1;
     while(i<j){
@@ -20,7 +20,7 @@ void sortZeroAndOne(int arr[],int size){
     }
 }
 
-//most optimize logic
+//most optimize logic tc-o(n) sc- o(1)
 void sortZeroAndOneSecond(int arr[],int size){
     int i=0,j=size-1;
     while(i<j){
@@ -34,8 +34,23 @@ void sortZeroAndOneSecond(int arr[],int size){
     }
 }
 
+//tc - o(n log n) sc->0(1)
 void sortAndOneUsingInbuildMethod(int arr[],int size){
     sort(arr,arr+size);
+}
+
+//tc-o(n) sp-o(1)
+void sortZeroAndOneUsingCountMethod(int arr[],int size){
+    int zeroCount = 0;
+    //count zero
+    for(int i=0;i<size;i++){
+        if(arr[i]==0) zeroCount++;
+    }
+    //add zero
+    for(int i=0;i<size;i++){
+        if(i<zeroCount) arr[i]=0;
+        else arr[i]=1;
+    }
 }
 
 int main(){
@@ -46,7 +61,8 @@ int main(){
     int size = sizeof(arr)/sizeof(arr[1]);
     // sortZeroAndOne(arr,size);
     // sortZeroAndOneSecond(arr,size);
-    sortAndOneUsingInbuildMethod(arr,size);
+    // sortAndOneUsingInbuildMethod(arr,size);
+    sortZeroAndOneUsingCountMethod(arr,size);
     for(int i=0;i<size;i++){
         cout<<arr[i]<<" ";
     }
