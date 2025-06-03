@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-
+//leetcode
 //tc-o(n^2) sc-o(1)
 bool twoSum(int arr[],int size,int target){
     for(int i=0;i<size;i++){
