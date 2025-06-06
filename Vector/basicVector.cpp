@@ -23,7 +23,8 @@ void basicVector(){
     arr.clear();
 
     // declear vector with data 
-    vector<int>arr1(20,40);
+    vector<int>arr1(5,0); //<- here 5 is size fill with 0 
+    vector<int>temp(10); //<- here 5 is size
 
     vector<int>arr2={1,2,3,4,5};
 
