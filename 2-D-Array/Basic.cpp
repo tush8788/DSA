@@ -45,6 +45,26 @@ void print2DArr(){
 
 }
 
+void takingInput(){
+    int arr[3][2];
+    int rowSize = 3;
+    int colSize = 2;
+    for(int i=0;i<rowSize;i++){
+        for(int j=0;j<colSize;j++){
+            cout<<"input for "<<i<<", "<<j<<endl;
+            cin>>arr[i][j];
+        }
+    }
+
+    // print
+    for(int i=0;i<rowSize;i++){
+        for(int j=0;j<colSize;j++){
+            cout<<arr[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+}
+
 int main(){
     //declear arr
         int arr[3][2] ={{1,2},{10,40},{50,60}};
@@ -66,5 +86,6 @@ int main(){
         }
         cout<<"______"<<endl;
         print2DArr();
+        takingInput();
         return 0;
 }
