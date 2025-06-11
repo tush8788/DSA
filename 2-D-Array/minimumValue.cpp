@@ -8,7 +8,8 @@ int minValue(vector<vector<int>>arr){
     int colSize = arr[0].size();
     for(int i=0;i<rowSize;i++){
         for(int j=0;j<colSize;j++){
-            if(ans>arr[i][j]) ans = arr[i][j];  
+            // if(ans>arr[i][j]) ans = arr[i][j];  
+            ans = min(arr[i][j],ans);
         }
     }
     return ans;
