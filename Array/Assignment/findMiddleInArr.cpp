@@ -10,6 +10,30 @@ void printArr(vector<int>arr){
     cout<<endl;
 }
 
+//TC - O(N^2) SC - O(1)
+int brouteForce(vector<int>arr){
+    int size = arr.size();
+    for(int i=0;i<size;i++){
+        int leftSum = 0;
+        int rightSum = 0;
+        //left sum
+        for(int j=0;j<i;j++){
+            leftSum+=arr[j];
+        }
+        //right sum
+        for(int j=i+1;j<size;j++){
+            rightSum+=arr[j];
+        }
+
+        if(leftSum==rightSum){
+            return i;
+        } 
+    }
+
+    return -1;
+}
+
+//TC - O(N) SP - O(N)
 int middleIndex(vector<int>arr){
     int size = arr.size();
     vector<int> leftArr(size,0);
@@ -33,6 +57,7 @@ int middleIndex(vector<int>arr){
 
 int main(){
     vector<int>arr={1,7,3,6,5,6};
-    cout<<"middle index :- "<<middleIndex(arr)<<endl;
+    cout<<"middle index optimze solution :- "<<brouteForce(arr)<<endl;
+    cout<<"middle index broute force :- "<<middleIndex(arr)<<endl;
     return 0;
 }
