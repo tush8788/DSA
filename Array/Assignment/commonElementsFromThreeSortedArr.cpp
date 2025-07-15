@@ -9,6 +9,20 @@ void printArr(vector<int>arr){
     cout<<endl;
 }
 
+//just for remove duplcate from arr so we don't need to use set data structure
+vector<int> removeDuplicate(vector<int>arr){
+    vector<int>ans;
+    int i=0,j=1;
+    while(j<(int)arr.size()){
+        if(arr[i]!=arr[j] || j==(int)arr.size()-1){
+            ans.push_back(arr[i]);
+        }
+        i++;
+        j++;
+    }
+    return ans;
+}
+
 //1. tc o(n1+n2+n3) sc o(n)
 vector<int> commonElements(vector<int>arr1,vector<int>arr2,vector<int>arr3){
     vector<int>ans;
@@ -69,13 +83,45 @@ vector<int> findCommonSecond(vector<int>arr1,vector<int>arr2,vector<int>arr3){
     return ans;
 }
 
+//without using set 
+vector<int> findCommonElemWithoutSet(vector<int>arr1,vector<int>arr2,vector<int>arr3){
+    //remove duplicate
+    arr1 = removeDuplicate(arr1);
+    arr2 = removeDuplicate(arr2);
+    arr3 = removeDuplicate(arr3);
+
+    vector<int>ans;
+    int i,j,k,n1=arr1.size(),n2=arr2.size(),n3=arr3.size();
+    i=j=k=0;
+
+    while(i<n1 && j<n2 && k<n3){
+        if(arr1[i]==arr2[j] && arr2[j]==arr3[k]){
+            ans.push_back(arr1[i]);
+            i++;
+            j++;
+            k++;
+        }else if(arr1[i]<arr2[j]){ //jsut check arr1 value smaller then arr2 value 
+            i++;
+        }else if(arr2[j]<arr3[k]){ //jsut check arr2 value smaller then arr3 value 
+            j++;
+        }else{
+            k++;
+        }
+    }
+  
+    return ans;
+}
+
+
 int main(){
-    vector<int>a={1,5,10,20,40,80};
-    vector<int>b={6,7,20,80,100};
-    vector<int>c={3,4,15,20,30,70,80,100};
+    // vector<int>a={1,5,10,20,40,80};
+    // vector<int>b={6,7,20,80,100};
+    // vector<int>c={3,4,15,20,30,70,80,100};
+    vector<int>a={3,3,3,3};
+    vector<int>b={3,3,3,3};
+    vector<int>c={3,3,3,3};
     // vector<int>ans = commonElements(a,b,c);findCommonSecond
     vector<int>ans = findCommonSecond(a,b,c);
-
     printArr(ans);
     return 0;
 }
