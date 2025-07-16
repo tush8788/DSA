@@ -10,6 +10,7 @@ void printArr(vector<int>arr){
 }
 
 //just for remove duplcate from arr so we don't need to use set data structure
+//tc o(n) sc o(n)
 vector<int> removeDuplicate(vector<int>arr){
     vector<int>ans;
     int i=0,j=1;
@@ -83,7 +84,7 @@ vector<int> findCommonSecond(vector<int>arr1,vector<int>arr2,vector<int>arr3){
     return ans;
 }
 
-//without using set 
+//without using set TC - o(n1+n2+n3) sc o(n)
 vector<int> findCommonElemWithoutSet(vector<int>arr1,vector<int>arr2,vector<int>arr3){
     //remove duplicate
     arr1 = removeDuplicate(arr1);
