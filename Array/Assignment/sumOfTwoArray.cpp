@@ -75,6 +75,7 @@ vector<int> brouteForce(vector<int> arr1, vector<int> arr2)
     return ans;
 }
 
+//tc o(m+n) sc (1)
 string calc_Sum(vector<int> &arr1, vector<int> &arr2)
 {
     // Complete the function
