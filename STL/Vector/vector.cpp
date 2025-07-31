@@ -23,6 +23,44 @@ int main(){
     // 4) pop_back()
     arr.pop_back();
     // 5) size()
-    cout<<"size of vector :: "<<arr.size();
+    cout<<"size of vector :: "<<arr.size()<<endl;
+    // 6) fornt()
+    cout<<"front :: "<<arr.front()<<endl;
+    // 7) back()
+    cout<<"back :: "<<arr.back()<<endl;
+    // 8) empty()
+    cout<<"empty :: "<<arr.empty()<<endl;
+    // 9) at()
+    cout<<"at :: "<<arr.at(1)<<endl;
+    // 10) capacity()
+    cout<<"capacity :: "<<arr.capacity()<<endl;
+    // 11) reserve()
+    arr.reserve(20);
+    cout<<"reserve :: "<<arr.capacity()<<endl;
+
+    // 12) insert
+    arr.insert(arr.begin(),99);
+    cout<<" insert 0:: "<<arr[0]<<"\n 1 ::"<<arr[1]<<endl;
+
+    // 13) max_size
+    cout<<" max size :: "<< arr.max_size() <<endl;
+
+    // 14) clear
+    arr.clear();
+    cout<<"after clear "<<arr.size()<<endl;
+
+    arr.push_back(10);
+    arr.push_back(11);
+    arr.push_back(12);
+    arr.push_back(13);
+     
+    //15 erase
+    arr.erase(arr.begin());
+    cout<<"erase "<<arr[0]<<endl;
+
+    //for each loop
+    for(int i : arr){
+        cout<<i<<" ";
+    }
     return 0;
 }
