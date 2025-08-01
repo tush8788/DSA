@@ -2,6 +2,41 @@
 #include<vector>
 using namespace std;
 
+
+void printVectorUsingIterator(vector<int>arr){
+    vector<int>::iterator it = arr.begin();
+    while(it != arr.end()){
+        cout<<*it<<" ";
+        it++;
+    }
+    cout<<endl;
+}
+
+void createTwoDVector(){
+    //create twoD vector with 5 rows and 4 cols and intilize with -1
+    vector<vector<int>>arr(5,vector<int>(4,-1));
+    //row
+    int row = arr.size();
+    //col 
+    int col = arr[0].size();
+
+    //jagged vector (means in very column have diffrent size)
+    vector<vector<int>>jaggArr(4);
+    jaggArr[0] = vector<int>(4);
+    jaggArr[1] = vector<int>(2);
+    jaggArr[3] = vector<int>(1);
+    jaggArr[4] = vector<int>(5);
+
+    //how to get rows
+    jaggArr.size();
+    //how to get col
+    jaggArr[0].size();
+    jaggArr[1].size();
+    jaggArr[2].size();
+    jaggArr[3].size();
+    
+}
+
 int main(){
     //create
     //normal
@@ -62,5 +97,8 @@ int main(){
     for(int i : arr){
         cout<<i<<" ";
     }
+    cout<<endl<<"print Using Itertor:: ";
+    //print using iterator
+    printVectorUsingIterator(arr);
     return 0;
 }
