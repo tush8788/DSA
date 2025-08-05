@@ -51,10 +51,60 @@ int main(){
     }
 
 
-    // myList.clear();
-    // cout<<"Size :: "<<myList.size()<<endl;;
+    myList.clear();
+    cout<<"Size :: "<<myList.size()<<endl;;
 
-    // cout<<"List is Empty:: "<<myList.empty();
+    cout<<"List is Empty:: "<<myList.empty();
+
+    //swap method 
+    list<int>myList1;
+    list<int>myList2;
+
+    myList1.push_back(10);
+    myList1.push_back(20);
+    myList1.push_back(30);
+
+    myList2.push_back(100);
+    myList2.push_back(200);
+    myList2.push_back(300);
+
+    list<int>::iterator it1 = myList1.begin();
+    cout<<endl<<"before swap :: ";
+    while (it1!=myList1.end())
+    {
+        cout<<*it1<<" ";
+        it1++;
+    }
+    cout<<endl;    
+    myList1.swap(myList2);
+    cout<<"after swap :: ";
+    it1 = myList1.begin();
+    while (it1!=myList1.end())
+    {
+        cout<<*it1<<" ";
+        it1++;
+    }
+    cout<<endl;
+
+    //insert 
+    cout<<"insert ::";
+    myList1.insert(myList1.begin(),1000);
+
+    it1 = myList1.begin();
+    while (it1!=myList1.end())
+    {
+        cout<<*it1<<" ";
+        it1++;
+    }
+    cout<<endl;
+
+    //erase
+    cout<<"erase before:: "<<myList1.size()<<endl;
+
+    myList1.erase(myList1.begin(),myList1.end());
+
+    cout<<"erase after:: "<<myList1.size()<<endl;
+
     
     return 0;
 }
