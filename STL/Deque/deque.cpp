@@ -36,6 +36,42 @@ int main(){
 
     //empty
     cout<<"empty :: "<<(dq.empty()?"true":"false")<<endl;
+
+    //iterator
+    cout<<"print iterator:: ";
+    deque<int>::iterator it = dq.begin();
+    while (it!=dq.end())
+    {
+        cout<<*it<<" ";
+        it++;
+    }
+    cout<<endl;
+
+    //access like array
+    cout<<"oprator dq[2]:: "<<dq[2]<<endl;
+    cout<<"oprator using at:: "<<dq.at(1)<<endl;
+
+    //insert
+    it = dq.begin();
+    dq.insert(it,200);
+    cout<<"insert "<<dq.at(0)<<endl;
+
+    // erase
+    it = dq.begin();
+    dq.erase(it);
+    cout<<"insert "<<dq.at(0)<<endl;
+
+    //clear
+    dq.clear();
+    cout<<"clear :: "<<dq.size()<<endl;
+
+    //swap
+    deque<int>dq1;
+    dq1.push_back(1000);
+    dq1.push_back(2000);
+    dq1.push_back(3000);
+
+    dq.swap(dq1);
     
     return 0;
 }
