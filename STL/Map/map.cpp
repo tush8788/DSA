@@ -51,7 +51,33 @@ int main()
         cout<<p.second<<endl;
         it++;
     }
+
+    //erase
+    cout<<"Size :: "<<unMap.size()<<endl;
+    // unMap.erase(unMap.begin(),unMap.end());
+    // cout<<"after Erase :: "<<unMap.size()<<endl;
+
+    //find
+    cout<<(unMap.find("iN")!=unMap.end() ? "found":"not found")<<endl;
+
+    //count
+    cout<<"count "<<unMap.count("uS")<<endl;
+
+    //order map
+    cout<<"_____Ordermap_____"<<endl;
+    map<int,string>omap;
+    omap.insert(make_pair(3,"tushar3"));
+    omap.insert(make_pair(1,"tushar1"));
+    omap.insert(make_pair(2,"tushar2"));
+
+    map<int,string>::iterator oIt = omap.begin();
+    while (oIt!=omap.end())
+    {
+        cout<<(*oIt).first<<" : ";
+        cout<<(*oIt).second<<endl;
+        oIt++;
+    }
     
-    
+
     return 0;
 }
