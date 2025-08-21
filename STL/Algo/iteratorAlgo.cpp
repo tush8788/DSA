@@ -32,7 +32,7 @@ int main(){
     auto it = find_if(arr.begin(),arr.end(),isEven);
     cout<<(*it)<<endl;
 
-    //count
+    //count (this will give how many time given elem found in vector any container)
     int countVal = count(arr.begin(),arr.end(),11);
     cout<<"count :: "<<countVal<<endl;
     return 0;
