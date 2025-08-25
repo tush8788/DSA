@@ -6,8 +6,15 @@ void printDouble(int a){
     cout<<2*a<<endl;
 }
 
+void printArr(vector<int>arr){
+    for(auto a : arr){
+        cout<<a<<" ";
+    }
+    cout<<endl;
+}
+
 bool isEven(int a){
-    return a%2==12;
+    return a%2==0;
 }
 
 int main(){
@@ -30,10 +37,19 @@ int main(){
     
     //find_if
     auto it = find_if(arr.begin(),arr.end(),isEven);
-    cout<<(*it)<<endl;
+    cout<<"Find if :: "<<(*it)<<endl;
 
     //count (this will give how many time given elem found in vector any container)
     int countVal = count(arr.begin(),arr.end(),11);
     cout<<"count :: "<<countVal<<endl;
+
+    //count_if
+    int countValIF = count_if(arr.begin(),arr.end(),isEven);
+    cout<<"count_if :: "<<countValIF<<endl;
+
+    //sort
+    sort(arr.begin(),arr.end());
+    printArr(arr);
+
     return 0;
 }
