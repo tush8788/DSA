@@ -49,7 +49,27 @@ int main(){
 
     //sort
     sort(arr.begin(),arr.end());
+    cout<<"sort :: "<<endl;
     printArr(arr);
+
+    //reverse
+    reverse(arr.begin(),arr.end());
+    cout<<"reverse :: "<<endl;
+    printArr(arr);
+
+    // rotate
+    vector<int>arr1={10,20,30,40,50,60};
+    cout<<"______"<<endl<<"before rotate :: ";
+    printArr(arr1);
+    rotate(arr1.begin(),arr1.begin()+2,arr1.end());
+    cout<<"after rotate :: ";
+    printArr(arr1);
+
+    //unique
+    vector<int>arr2={1,2,2,3,3,4};
+    auto it1 = unique(arr2.begin(),arr2.end());
+    arr2.erase(it1,arr2.end());
+    printArr(arr2);
 
     return 0;
 }
